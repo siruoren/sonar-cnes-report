@@ -1,4 +1,16 @@
 # Sonar CNES Report
+
+
+fork by https://github.com/cnescatlab/sonar-cnes-report.git
+
+# build
+require env: java1.8+ maven3.1.0+
+order: 
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package
+  - mvn clean package -Dmaven.test.skip=true
+
+
+
 [![Build Status](https://travis-ci.org/cnescatlab/sonar-cnes-report.svg?branch=master)](https://travis-ci.org/cnescatlab/sonar-cnes-report)
 [![SonarQube Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=fr.cnes.sonar%3Acnesreport&metric=alert_status)](https://sonarcloud.io/dashboard?id=fr.cnes.sonar%3Acnesreport)
 [![SonarQube Bugs](https://sonarcloud.io/api/project_badges/measure?project=fr.cnes.sonar%3Acnesreport&metric=bugs)](https://sonarcloud.io/project/issues?id=fr.cnes.sonar%3Acnesreport&resolved=false&types=BUG)
