@@ -1,8 +1,27 @@
 # Sonar CNES Report
 
 
-fork by https://github.com/cnescatlab/sonar-cnes-report.git tag:3.3.1
+fork by https://github.com/cnescatlab/sonar-cnes-report.git 
 
+tag: 3.3.1
+
+issues: https://github.com/cnescatlab/sonar-cnes-report/issues/172
+
+## change info
+```
+--- src/main/resources/requests.properties
++++ src/main/resources/requests.properties
+@@ -44,7 +44,7 @@
+ # Request to get the list of projects linked to a profile in SQ 5.X
+ GET_PROJECT_QUALITY_PROFILES_REQUEST = %s/api/qualityprofiles/search?projectKey=%s
+ # Request to get the list of issues linked to a project
+-GET_ISSUES_REQUEST = %s/api/issues/search?projects=%s&facets=types,rules,severities,directories,fileUuids,tags&ps=%d&p=%d&additionalFields=rules,comments&resolved=%s&branch=%s
++GET_ISSUES_REQUEST = %s/api/issues/search?projects=%s&facets=types,rules,severities,directories,files,tags&ps=%d&p=%d&additionalFields=rules,comments&resolved=%s&branch=%s
+ # Request to get the list of a project's facets
+ GET_FACETS_REQUEST = %s/api/issues/search?projects=%s&resolved=false&facets=rules,severities,types&ps=1&p=1&branch=%s
+ # Request to get the list of a project's facets
+
+```
 # build
 ## require env: 
   - java1.8+ 
@@ -16,11 +35,6 @@ fork by https://github.com/cnescatlab/sonar-cnes-report.git tag:3.3.1
 
 # 
 
-[![Build Status](https://travis-ci.org/cnescatlab/sonar-cnes-report.svg?branch=master)](https://travis-ci.org/cnescatlab/sonar-cnes-report)
-[![SonarQube Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=fr.cnes.sonar%3Acnesreport&metric=alert_status)](https://sonarcloud.io/dashboard?id=fr.cnes.sonar%3Acnesreport)
-[![SonarQube Bugs](https://sonarcloud.io/api/project_badges/measure?project=fr.cnes.sonar%3Acnesreport&metric=bugs)](https://sonarcloud.io/project/issues?id=fr.cnes.sonar%3Acnesreport&resolved=false&types=BUG)
-[![SonarQube Coverage](https://sonarcloud.io/api/project_badges/measure?project=fr.cnes.sonar%3Acnesreport&metric=coverage)](https://sonarcloud.io/component_measures?id=fr.cnes.sonar%3Acnesreport&metric=Coverage)
-[![SonarQube Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=fr.cnes.sonar%3Acnesreport&metric=sqale_index)](https://sonarcloud.io/component_measures?id=fr.cnes.sonar%3Acnesreport&metric=Maintainability)
 
 SonarQube is an open platform to manage code quality. This program can export code analysis from a SonarQube server as a docx, xlsx, csv, markdown,  and text files.
 
@@ -124,62 +138,6 @@ java -Dhttps.proxyHost=https://myproxy -Dhttps.proxyPort=42
 - Get a dynamic pivot table with all issues
 - Export in french or english
 
-### Compatibility matrix
-
-For legacy versions, check the wiki page here : [Note on legacy versions](https://github.com/cnescatlab/sonar-cnes-report/wiki#note-on-legacy-versions)
-
-<table>
- <tr>
-  <td><b>cnesreport <br>\<br> SonarQube</b></td>
-  <td><b>2.0.0<br/>Standalone</b></td>
-  <td><b>2.1.0<br/>Standalone</b></b></td>
-  <td><b>2.2.0<br/>Standalone + Plugin</b></td>
-  <td><b>3.0.x<br/>Standalone + Plugin</b></b></td>
-  <td><b>3.1.0<br/>Standalone + Plugin</b></b></td>
-  <td><b>3.2.x<br/>Standalone + Plugin</b></b></td>
-  <td><b>3.3.0<br/>Standalone + Plugin</b></b></td>
- </tr>
- <tr>
-  <td><b>7.9.x (LTS)</b></td>
-  <td>X</td>
-  <td>X</td>
-  <td>(Standalone only)</td>
-  <td>X</td>
-  <td>X</td>
-  <td>X</td>
-  <td>X</td>
- </tr>
- <tr>
-  <td><b>8.0</b></td>
-  <td>-</td>
-  <td>-</td>
-  <td>-</td>
-  <td>-</td>
-  <td>-</td>
-  <td>X</td>
-  <td>X</td>
- </tr>
- <tr>
-  <td><b>8.1</b></td>
-  <td>-</td>
-  <td>-</td>
-  <td>-</td>
-  <td>-</td>
-  <td>-</td>
-  <td>X</td>
-  <td>X</td>
- </tr>
- <tr>
-  <td><b>8.2</b></td>
-  <td>-</td>
-  <td>-</td>
-  <td>-</td>
-  <td>-</td>
-  <td>-</td>
-  <td>X</td>
-  <td>X</td>
- </tr>
-</table>
 
 ### How to contribute
 If you experienced a problem with the plugin please open an issue. Inside this issue please explain us how to reproduce this issue and paste the log.
