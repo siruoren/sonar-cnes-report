@@ -4,8 +4,10 @@
 fork by https://github.com/cnescatlab/sonar-cnes-report.git tag:3.3.1
 
 # build
-require env: java1.8+ maven3.1.0+
-order: 
+## require env: 
+  - java1.8+ 
+  - maven3.1.0+
+## build order: 
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package
   - mvn clean package -Dmaven.test.skip=true
 
