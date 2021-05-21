@@ -11,6 +11,9 @@ fork by https://github.com/cnescatlab/sonar-cnes-report.git tag:3.3.1
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package
   - mvn clean package -Dmaven.test.skip=true
 
+# sonarqube version(test)
+  - sonarqube-8.9.0.43852
+
 # 
 
 [![Build Status](https://travis-ci.org/cnescatlab/sonar-cnes-report.svg?branch=master)](https://travis-ci.org/cnescatlab/sonar-cnes-report)
